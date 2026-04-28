@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Epalos | Trust & Story</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family: 'Inter', sans-serif; background:#fffaf5; }
+        .container { max-width:1100px; margin:0 auto; padding:0 24px; }
+        .navbar, .nav-container, .logo, .nav-links, .btn-wa-small, .btn-primary { /* same as previous pages */ }
+        .navbar {
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 24px;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #f09b42, #d4526c);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 600;
+            color: #1e2a3e;
+            transition: 0.2s;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: #d4526c;
+        }
+        .btn-wa-small {
+            background: #25D366;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+        .about-hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?q=80&w=1974&auto=format');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        .promise-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+            margin: 50px 0;
+        }
+        .promise-card {
+            background: white;
+            border-radius: 32px;
+            padding: 30px;
+            flex:1;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        .faq-item {
+            background: #fef3e8;
+            margin: 20px 0;
+            padding: 24px;
+            border-radius: 28px;
+        }
+        .contact-box {
+            background: #d4526c10;
+            border-radius: 48px;
+            padding: 48px;
+            text-align: center;
+            margin: 60px 0;
+        }
+        footer { background:#1e293b; color:#cbd5e1; padding:40px 0; text-align:center; }
+    </style>
+</head>
+<body>
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo">🎨 EPALOS ART</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="product.html">Product</a>
+            <a href="about.html" class="active">About</a>
+            <a href="https://wa.me/07448787721" class="btn-wa-small"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </div>
+    </div>
+</nav>
+
+<section class="about-hero">
+    <div class="container">
+        <h1 style="font-size:3rem;">🌍 Epalos Global Ventures Limited</h1>
+        <p style="font-size:1.3rem; margin-top:20px;">We believe every child is naturally creative.<br> Our mission: help children explore imagination, build confidence, and create something meaningful.</p>
+    </div>
+</section>
+
+<div class="container">
+    <div style="margin:70px 0;">
+        <h2 style="font-size:2.2rem; text-align:center;">🎨 Our Vision</h2>
+        <p style="text-align:center; font-size:1.2rem; max-width:700px; margin:20px auto;">Less screen time. More creativity, expression, and real-world learning.</p>
+    </div>
+
+    <div style="background:#fff0e3; border-radius:48px; padding:50px;">
+        <h2 style="text-align:center;">💛 Why We Created This</h2>
+        <p style="text-align:center; max-width:800px; margin:20px auto;">Kids say “I’m bored” more than ever. So we created a simple solution—a complete art experience in one box. No complicated setups. No missing pieces. Just the joy of creating.</p>
+    </div>
+
+    <!-- OUR PROMISE -->
+    <div class="promise-grid">
+        <div class="promise-card"><i class="fas fa-child fa-3x" style="color:#f09b42;"></i><h3>Safe Materials</h3><p>Child-friendly, non-toxic paints & components</p></div>
+        <div class="promise-card"><i class="fas fa-lightbulb fa-3x" style="color:#f09b42;"></i><h3>Thoughtfully Designed</h3><p>Every piece chosen for creativity & joy</p></div>
+        <div class="promise-card"><i class="fas fa-gem fa-3x" style="color:#f09b42;"></i><h3>High Quality</h3><p>Sturdy easel, real canvas, lasting value</p></div>
+        <div class="promise-card"><i class="fas fa-heart fa-3x" style="color:#f09b42;"></i><h3>Meaningful Experience</h3><p>From first brushstroke to proud masterpiece</p></div>
+    </div>
+
+    <!-- FAQ -->
+    <h2 style="text-align:center; margin:40px 0 20px;">❓ Frequently Asked Questions</h2>
+    <div class="faq-item"><strong>Q: What age is this for?</strong><br>A: Ages 5–12 (perfect for beginners, fun for older kids too)</div>
+    <div class="faq-item"><strong>Q: Is everything included?</strong><br>A: Yes—no extra materials needed. Open the box and start painting.</div>
+    <div class="faq-item"><strong>Q: Is it a good gift?</strong><br>A: Yes, it’s designed as a ready-to-gift package (beautiful box, no wrapping needed).</div>
+    <div class="faq-item"><strong>Q: Do you offer bulk orders?</strong><br>A: Yes, for schools, birthday parties, and events. Contact us for pricing.</div>
+
+    <!-- CONTACT -->
+    <div class="contact-box">
+        <h2>📲 Ready to order or have questions?</h2>
+        <p style="margin:20px 0;"><i class="fab fa-whatsapp fa-2x" style="color:#25D366;"></i> <strong>WhatsApp:</strong> <a href="https://wa.me/07448787721">https://wa.me/07448787721</a></p>
+        <p><i class="fas fa-envelope"></i> <strong>Email:</strong> hello@epalosart.com (replace with your email)</p>
+        <div style="margin-top:30px;">
+            <a href="product.html" class="btn-primary" style="background:linear-gradient(95deg,#f09b42,#d4526c);">🛒 Shop Now</a>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>© 2025 Epalos Global Ventures Limited — Every child is an artist.</p>
+</footer>
+</body>
+</html>
