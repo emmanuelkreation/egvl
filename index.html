@@ -17,6 +17,7 @@
             background-color: #ffffff;
             color: #1e2a3e;
             scroll-behavior: smooth;
+            overflow-x: hidden;
         }
         .container {
             max-width: 1280px;
@@ -41,7 +42,6 @@
             margin: 0 auto;
             padding: 0 24px;
         }
-        /* Logo styling - icon + text */
         .logo {
             display: flex;
             align-items: center;
@@ -55,12 +55,12 @@
             color: transparent;
             letter-spacing: -0.5px;
         }
-        .logo i {
-            background: none;
-            -webkit-background-clip: unset;
-            background-clip: unset;
-            color: #1e6fdf;
-            font-size: 1.9rem;
+        .logo img {
+            height: 45px;
+            transition: transform 0.3s ease;
+        }
+        .logo:hover img {
+            transform: rotate(5deg) scale(1.05);
         }
         .nav-links {
             display: flex;
@@ -113,25 +113,30 @@
             cursor: pointer;
             color: #1e2a3e;
         }
-        /* ========== HERO SECTION with Logo ========== */
+        /* ========== HERO SECTION with Background Image ========== */
         .hero {
-            background: linear-gradient(135deg, #0f2b4d 0%, #1e6fdf 100%);
+            position: relative;
+            background: linear-gradient(135deg, rgba(15,43,77,0.85), rgba(30,111,223,0.85)), url('https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=2070&auto=format');
+            background-size: cover;
+            background-position: center;
             color: white;
             padding: 100px 0 90px;
             text-align: center;
-            position: relative;
             overflow: hidden;
         }
         .hero-logo {
             margin-bottom: 30px;
+            animation: float 3s ease-in-out infinite;
         }
-        .hero-logo i {
-            font-size: 4.5rem;
-            background: rgba(255,255,255,0.2);
-            padding: 20px;
-            border-radius: 90px;
-            backdrop-filter: blur(4px);
-            color: #f5b042;
+        .hero-logo img {
+            height: 80px;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.2));
+            border-radius: 20px;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); }
+            100% { transform: translateY(0px); }
         }
         .hero h1 {
             font-size: 3.2rem;
@@ -141,6 +146,7 @@
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
+            animation: fadeInUp 0.8s ease;
         }
         .hero .highlight {
             background: linear-gradient(120deg, #f5b042, #ffdd99);
@@ -153,13 +159,20 @@
             max-width: 600px;
             margin: 0 auto 32px;
             opacity: 0.95;
+            animation: fadeInUp 0.8s ease 0.1s both;
         }
         .hero-buttons {
             display: flex;
             gap: 20px;
             justify-content: center;
             flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease 0.2s both;
         }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* Pulse animation for buttons */
         .btn-primary {
             background: #f5b042;
             color: #0f2b4d;
@@ -172,11 +185,17 @@
             gap: 12px;
             transition: 0.2s;
             box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(245,176,66,0.4); }
+            70% { box-shadow: 0 0 0 12px rgba(245,176,66,0); }
+            100% { box-shadow: 0 0 0 0 rgba(245,176,66,0); }
         }
         .btn-primary:hover {
             transform: translateY(-3px);
             background: #ffaa2b;
-            box-shadow: 0 12px 22px rgba(0,0,0,0.2);
+            animation: none;
         }
         .btn-outline {
             background: transparent;
@@ -195,8 +214,9 @@
             background: white;
             color: #1e6fdf;
             border-color: white;
+            transform: scale(1.02);
         }
-        /* Trust bar, sections, etc. (same as previous) */
+        /* Trust bar, sections, etc. */
         .trust-bar {
             background: #f8fafc;
             padding: 18px 0;
@@ -213,6 +233,10 @@
         .trust-items i {
             color: #1e6fdf;
             margin-right: 8px;
+            transition: transform 0.2s;
+        }
+        .trust-items span:hover i {
+            transform: scale(1.2) rotate(5deg);
         }
         .section {
             padding: 80px 0;
@@ -236,6 +260,11 @@
             border-radius: 32px;
             padding: 48px 40px;
             margin-bottom: 40px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .problem-box:hover, .solution-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px rgba(0,0,0,0.05);
         }
         .problem-box h3, .solution-box h3 {
             font-size: 1.8rem;
@@ -259,7 +288,7 @@
         }
         .service-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 30px rgba(0,0,0,0.05);
+            box-shadow: 0 20px 30px rgba(0,0,0,0.1);
             border-color: #cbdff2;
         }
         .service-icon {
@@ -273,6 +302,10 @@
             margin: 0 auto 24px;
             font-size: 1.8rem;
             color: #1e6fdf;
+            transition: transform 0.3s;
+        }
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
         }
         .portfolio-grid {
             display: grid;
@@ -294,7 +327,7 @@
             transition: transform 0.4s;
         }
         .portfolio-item:hover img {
-            transform: scale(1.03);
+            transform: scale(1.05);
         }
         .portfolio-info {
             padding: 20px;
@@ -311,6 +344,11 @@
             padding: 28px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.03);
             border: 1px solid #edf2f7;
+            transition: 0.2s;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px rgba(0,0,0,0.08);
         }
         .stars {
             color: #f5b042;
@@ -330,6 +368,9 @@
             box-shadow: 0 15px 30px rgba(0,0,0,0.05);
             transition: 0.2s;
             border: 1px solid #eef2f6;
+        }
+        .pricing-card:hover {
+            transform: translateY(-10px);
         }
         .pricing-card.popular {
             border: 2px solid #f5b042;
@@ -353,13 +394,32 @@
             margin: 20px 0;
             color: #1e6fdf;
         }
+        /* FINAL CTA with Background Image & Animation */
         .final-cta {
-            background: #0f2b4d;
+            background: linear-gradient(rgba(15,43,77,0.85), rgba(15,43,77,0.85)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
             color: white;
             text-align: center;
-            padding: 70px 20px;
+            padding: 80px 20px;
             border-radius: 48px;
             margin: 40px 0;
+            transition: transform 0.2s;
+            animation: subtleZoom 20s ease-in-out infinite alternate;
+        }
+        @keyframes subtleZoom {
+            0% { background-size: 100%; }
+            100% { background-size: 110%; }
+        }
+        .final-cta h2 {
+            animation: fadeInUp 0.6s ease;
+        }
+        .final-cta p {
+            animation: fadeInUp 0.6s ease 0.1s both;
+        }
+        .final-cta .hero-buttons {
+            animation: fadeInUp 0.6s ease 0.2s both;
         }
         .float-wa {
             position: fixed;
@@ -459,6 +519,9 @@
             .problem-box, .solution-box {
                 padding: 32px 24px;
             }
+            .final-cta {
+                background-attachment: scroll;
+            }
         }
         .nav-links.show {
             display: flex;
@@ -473,6 +536,16 @@
             gap: 20px;
             z-index: 1000;
         }
+        /* Scroll reveal animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body>
@@ -480,9 +553,7 @@
 <nav class="navbar">
     <div class="nav-container">
         <a href="index.html" class="logo">
-            <div class="hero-logo">
-    <img src="epalos logo.jpeg" alt="EPALOS" style="height: 70px;">
-</div></i> EPALOS
+            <img src="epalos logo.jpeg" alt="EPALOS"> EPALOS
         </a>
         <div class="hamburger" onclick="toggleMenu()">☰</div>
         <div class="nav-links" id="navLinks">
@@ -495,12 +566,11 @@
     </div>
 </nav>
 
-<!-- HERO SECTION with Logo -->
+<!-- HERO SECTION with Background Image -->
 <section class="hero">
     <div class="container">
         <div class="hero-logo">
-    <img src="epalos logo.jpeg" alt="EPALOS" style="height: 70px;">
-</div>
+            <img src="epalos logo.jpeg" alt="EPALOS">
         </div>
         <h1>High‑Converting Websites That <span class="highlight">Actually Bring You Clients</span></h1>
         <p>We design and build websites for small businesses that don’t just look good – they generate leads, calls, and sales.</p>
@@ -511,7 +581,7 @@
     </div>
 </section>
 
-<!-- TRUST BAR (unchanged) -->
+<!-- TRUST BAR -->
 <div class="trust-bar">
     <div class="container trust-items">
         <span><i class="fas fa-check-circle"></i> 50+ Projects Delivered</span>
@@ -521,16 +591,16 @@
     </div>
 </div>
 
-<!-- PROBLEM / SOLUTION (unchanged) -->
+<!-- PROBLEM / SOLUTION -->
 <div class="section">
-    <div class="container problem-box">
+    <div class="container problem-box reveal">
         <h3>🤯 Most small business websites don’t bring in clients.</h3>
         <p style="font-size: 1.1rem; margin-bottom: 16px;">They look generic, load slowly, or have no clear call‑to‑action. Visitors leave within seconds – and you lose money.</p>
         <p>You need a website that works like a 24/7 salesperson. That’s where we come in.</p>
     </div>
 </div>
 
-<div class="container solution-box">
+<div class="container solution-box reveal">
     <h3>✅ We build conversion‑focused websites – fast, beautiful, and results‑driven.</h3>
     <p>No fluff. No endless revisions. Just a website that turns visitors into paying customers.</p>
 </div>
@@ -540,17 +610,17 @@
     <div class="container">
         <h2 class="section-title">What We Build</h2>
         <div class="services-grid">
-            <div class="service-card">
+            <div class="service-card reveal">
                 <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
                 <h3>Business Websites</h3>
                 <p>Professional 5‑page sites for service providers, shops, and startups.</p>
             </div>
-            <div class="service-card">
+            <div class="service-card reveal">
                 <div class="service-icon"><i class="fas fa-store"></i></div>
                 <h3>E‑commerce Stores</h3>
                 <p>Sell products online with easy‑to‑manage stores (Shopify / WooCommerce).</p>
             </div>
-            <div class="service-card">
+            <div class="service-card reveal">
                 <div class="service-icon"><i class="fas fa-chart-simple"></i></div>
                 <h3>SEO & Speed Optimization</h3>
                 <p>Get found on Google and keep visitors happy with lightning‑fast load times.</p>
@@ -565,15 +635,15 @@
         <h2 class="section-title">Real Work. Real Results.</h2>
         <p class="section-sub">Here are recent projects that helped our clients grow.</p>
         <div class="portfolio-grid">
-            <div class="portfolio-item">
+            <div class="portfolio-item reveal">
                 <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=600&auto=format" alt="Project 1">
                 <div class="portfolio-info"><h3>Lagos Bakery</h3><p>+45% more online orders in 2 months</p></div>
             </div>
-            <div class="portfolio-item">
+            <div class="portfolio-item reveal">
                 <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&auto=format" alt="Project 2">
                 <div class="portfolio-info"><h3>Real Estate Agency</h3><p>Inquiries increased by 80%</p></div>
             </div>
-            <div class="portfolio-item">
+            <div class="portfolio-item reveal">
                 <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format" alt="Project 3">
                 <div class="portfolio-info"><h3>Fashion Store</h3><p>200% ROI from first month</p></div>
             </div>
@@ -587,17 +657,17 @@
     <div class="container">
         <h2 class="section-title">Trusted by Business Owners</h2>
         <div class="testimonial-grid">
-            <div class="testimonial-card">
+            <div class="testimonial-card reveal">
                 <div class="stars">★★★★★</div>
                 <p>"EPALOS delivered a stunning website for my cleaning business. My phone hasn’t stopped ringing!"</p>
                 <p style="margin-top: 16px;"><strong>— Tunde A.</strong></p>
             </div>
-            <div class="testimonial-card">
+            <div class="testimonial-card reveal">
                 <div class="stars">★★★★★</div>
                 <p>"They understood my brand and built a site that actually converts. Best investment I’ve made."</p>
                 <p style="margin-top: 16px;"><strong>— Chioma O.</strong></p>
             </div>
-            <div class="testimonial-card">
+            <div class="testimonial-card reveal">
                 <div class="stars">★★★★★</div>
                 <p>"Fast, professional, and affordable. My website loads in under 2 seconds – my customers love it."</p>
                 <p style="margin-top: 16px;"><strong>— Ibrahim K.</strong></p>
@@ -606,26 +676,26 @@
     </div>
 </div>
 
-<!-- PRICING (id="pricing") -->
+<!-- PRICING -->
 <div id="pricing" class="section">
     <div class="container">
         <h2 class="section-title">Simple, Transparent Pricing</h2>
         <p class="section-sub">No hidden fees. You pay exactly what you see.</p>
         <div class="pricing-grid">
-            <div class="pricing-card">
+            <div class="pricing-card reveal">
                 <h3>Starter</h3>
                 <div class="price">₦150,000</div>
                 <p>3‑page website · Mobile responsive · Contact form · Basic SEO</p>
                 <a href="https://wa.me/07448787721" class="btn-outline" style="margin-top: 24px; border-color:#1e6fdf; color:#1e6fdf;">Get Started</a>
             </div>
-            <div class="pricing-card popular">
+            <div class="pricing-card popular reveal">
                 <div class="popular-badge">⭐ Most Popular</div>
                 <h3>Business</h3>
                 <div class="price">₦300,000</div>
                 <p>5‑page website · E‑commerce ready · Speed optimization · SEO setup · 1 month support</p>
                 <a href="https://wa.me/07448787721" class="btn-primary" style="margin-top: 24px;">Start Project</a>
             </div>
-            <div class="pricing-card">
+            <div class="pricing-card reveal">
                 <h3>Premium</h3>
                 <div class="price">₦500,000+</div>
                 <p>Custom design · Advanced functionality · Ongoing maintenance · Priority support</p>
@@ -635,7 +705,7 @@
     </div>
 </div>
 
-<!-- FINAL CTA -->
+<!-- FINAL CTA with Background Image & Animation -->
 <div class="container final-cta">
     <h2 style="font-size: 2rem;">Ready to Grow Your Business Online?</h2>
     <p style="margin: 20px auto; max-width: 500px;">Get a website that works as hard as you do. No games – just results.</p>
@@ -648,7 +718,7 @@
 <!-- FLOATING WHATSAPP -->
 <a href="https://wa.me/07448787721" class="float-wa" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
-<!-- FOOTER (unchanged) -->
+<!-- FOOTER -->
 <footer class="footer">
     <div class="container">
         <div class="footer-grid">
@@ -691,6 +761,20 @@
     function toggleMenu() {
         document.getElementById("navLinks").classList.toggle("show");
     }
+    // Scroll reveal animation
+    const reveals = document.querySelectorAll('.reveal');
+    function revealOnScroll() {
+        for (let i = 0; i < reveals.length; i++) {
+            const windowHeight = window.innerHeight;
+            const elementTop = reveals[i].getBoundingClientRect().top;
+            const revealPoint = 100;
+            if (elementTop < windowHeight - revealPoint) {
+                reveals[i].classList.add('active');
+            }
+        }
+    }
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll(); // initial check
 </script>
 </body>
 </html>
