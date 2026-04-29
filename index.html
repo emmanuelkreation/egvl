@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>EPALOS ART | Home of Creative Kids</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;600;700;800&display=swap" rel="stylesheet">
+    <title>EPALOS | High‑Converting Websites for Small Business</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
@@ -14,24 +14,24 @@
         }
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f9fbfd;
-            color: #0f2b4d;
-            overflow-x: hidden;
+            background-color: #ffffff;
+            color: #1e2a3e;
+            scroll-behavior: smooth;
         }
         .container {
             max-width: 1280px;
             margin: 0 auto;
             padding: 0 24px;
         }
-        /* ========== HEADER (LIVELY) ========== */
+        /* ========== HEADER (STICKY) ========== */
         .navbar {
-            background: rgba(255,255,255,0.96);
+            background: rgba(255,255,255,0.98);
             backdrop-filter: blur(12px);
-            box-shadow: 0 2px 15px rgba(0,0,0,0.03);
+            box-shadow: 0 1px 4px rgba(0,0,0,0.05);
             position: sticky;
             top: 0;
             z-index: 1000;
-            padding: 12px 0;
+            padding: 16px 0;
         }
         .nav-container {
             display: flex;
@@ -42,117 +42,105 @@
             padding: 0 24px;
         }
         .logo {
-            font-size: 1.8rem;
+            font-size: 1.7rem;
             font-weight: 800;
             background: linear-gradient(135deg, #1e6fdf, #0f2b4d);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            transition: transform 0.2s ease;
-            display: inline-block;
-        }
-        .logo:hover {
-            transform: scale(1.02);
+            letter-spacing: -0.5px;
         }
         .nav-links {
             display: flex;
-            gap: 28px;
+            gap: 32px;
             align-items: center;
         }
         .nav-links a {
             text-decoration: none;
-            font-weight: 600;
-            color: #1e2a3e;
+            font-weight: 500;
+            color: #2c3e50;
             transition: 0.2s;
             position: relative;
-            padding-bottom: 4px;
         }
         .nav-links a::after {
             content: '';
             position: absolute;
+            bottom: -6px;
+            left: 0;
             width: 0%;
             height: 2px;
             background: #1e6fdf;
-            bottom: 0;
-            left: 0;
-            transition: width 0.2s;
+            transition: 0.2s;
         }
         .nav-links a:hover::after, .nav-links a.active::after {
             width: 100%;
         }
-        .nav-links a:hover, .nav-links a.active {
-            color: #1e6fdf;
-        }
-        .icon-group {
-            display: flex;
-            gap: 16px;
-            align-items: center;
-        }
-        .icon-group i {
-            font-size: 1.2rem;
-            color: #0f2b4d;
-            cursor: pointer;
-            transition: transform 0.1s;
-        }
-        .icon-group i:hover {
-            transform: scale(1.1);
+        .nav-links a:hover {
             color: #1e6fdf;
         }
         .btn-wa-small {
             background: #25D366;
             color: white;
-            padding: 6px 16px;
+            padding: 8px 18px;
             border-radius: 40px;
             font-weight: 600;
+            font-size: 0.9rem;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
             text-decoration: none;
-            font-size: 0.9rem;
+            transition: 0.2s;
         }
-        /* Hamburger */
+        .btn-wa-small:hover {
+            background: #128C7E;
+            transform: scale(1.02);
+        }
         .hamburger {
             display: none;
             font-size: 1.6rem;
             cursor: pointer;
+            color: #1e2a3e;
         }
-        /* Hero with BG image */
+        /* ========== HERO SECTION ========== */
         .hero {
-            background: linear-gradient(rgba(15,43,77,0.7), rgba(30,111,223,0.7)), url('https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?q=80&w=2070&auto=format');
-            background-size: cover;
-            background-position: center 30%;
+            background: linear-gradient(135deg, #0f2b4d 0%, #1e6fdf 100%);
             color: white;
-            padding: 120px 0;
+            padding: 100px 0 90px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 3.2rem;
             font-weight: 800;
-            margin-bottom: 20px;
-            animation: fadeInUp 0.8s ease;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .hero .highlight {
+            background: linear-gradient(120deg, #f5b042, #ffdd99);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
         .hero p {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             max-width: 600px;
             margin: 0 auto 32px;
-            animation: fadeInUp 0.8s ease 0.1s both;
+            opacity: 0.95;
         }
         .hero-buttons {
             display: flex;
             gap: 20px;
             justify-content: center;
             flex-wrap: wrap;
-            animation: fadeInUp 0.8s ease 0.2s both;
         }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        /* Buttons */
         .btn-primary {
-            background: #1e6fdf;
-            color: white;
-            padding: 14px 32px;
+            background: #f5b042;
+            color: #0f2b4d;
+            padding: 14px 34px;
             border-radius: 60px;
             font-weight: 700;
             text-decoration: none;
@@ -160,50 +148,50 @@
             align-items: center;
             gap: 12px;
             transition: 0.2s;
-            box-shadow: 0 10px 20px rgba(30,111,223,0.3);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.15);
         }
         .btn-primary:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 15px 25px rgba(30,111,223,0.4);
+            transform: translateY(-3px);
+            background: #ffaa2b;
+            box-shadow: 0 12px 22px rgba(0,0,0,0.2);
         }
         .btn-outline {
             background: transparent;
             border: 2px solid white;
             color: white;
-            padding: 12px 28px;
+            padding: 12px 30px;
             border-radius: 60px;
-            font-weight: 700;
+            font-weight: 600;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            transition: all 0.2s;
+            transition: 0.2s;
         }
         .btn-outline:hover {
             background: white;
             color: #1e6fdf;
             border-color: white;
         }
-        /* Stats Counter */
-        .stats-section {
+        /* Trust bar */
+        .trust-bar {
+            background: #f8fafc;
+            padding: 18px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .trust-items {
             display: flex;
             justify-content: center;
-            gap: 60px;
             flex-wrap: wrap;
-            background: #eef5ff;
-            padding: 40px 20px;
-            border-radius: 64px;
-            margin: 40px 0;
+            gap: 40px;
+            font-weight: 500;
+            color: #2c3e50;
         }
-        .stat-item {
-            text-align: center;
-        }
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 800;
+        .trust-items i {
             color: #1e6fdf;
+            margin-right: 8px;
         }
-        /* Sections */
+        /* Section styles */
         .section {
             padding: 80px 0;
         }
@@ -211,82 +199,170 @@
             font-size: 2.2rem;
             font-weight: 800;
             text-align: center;
-            margin-bottom: 48px;
+            margin-bottom: 16px;
             color: #0f2b4d;
         }
-        /* Steps */
-        .steps-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 40px;
-        }
-        .step {
+        .section-sub {
             text-align: center;
-            flex: 1;
-            min-width: 160px;
-            background: white;
-            padding: 25px 15px;
+            max-width: 700px;
+            margin: 0 auto 48px;
+            color: #4a627a;
+            font-size: 1.1rem;
+        }
+        /* Problem / Solution */
+        .problem-box, .solution-box {
+            background: #f1f5f9;
             border-radius: 32px;
+            padding: 48px 40px;
+            margin-bottom: 40px;
+        }
+        .problem-box h3, .solution-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #0f2b4d;
+        }
+        /* Services grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 32px;
+            margin: 40px 0;
+        }
+        .service-card {
+            background: white;
+            border-radius: 28px;
+            padding: 32px 24px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.02);
             transition: all 0.3s;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+            border: 1px solid #eef2f6;
         }
-        .step:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 30px rgba(0,0,0,0.08);
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 30px rgba(0,0,0,0.05);
+            border-color: #cbdff2;
         }
-        .step-icon {
+        .service-icon {
             background: #eef5ff;
-            width: 80px;
-            height: 80px;
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 2.2rem;
+            margin: 0 auto 24px;
+            font-size: 1.8rem;
             color: #1e6fdf;
         }
-        /* Gallery */
-        .gallery-grid {
+        /* Portfolio gallery */
+        .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 24px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
             margin: 40px 0;
         }
-        .gallery-item {
+        .portfolio-item {
+            background: #f8fafc;
+            border-radius: 24px;
             overflow: hidden;
-            border-radius: 28px;
-            transition: all 0.3s;
+            transition: 0.2s;
             cursor: pointer;
         }
-        .gallery-item img {
+        .portfolio-item img {
             width: 100%;
-            height: 220px;
+            height: 200px;
             object-fit: cover;
             transition: transform 0.4s;
         }
-        .gallery-item:hover {
-            transform: scale(1.02);
-            box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+        .portfolio-item:hover img {
+            transform: scale(1.03);
         }
-        .gallery-item:hover img {
-            transform: scale(1.05);
+        .portfolio-info {
+            padding: 20px;
+        }
+        /* Testimonials */
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        .testimonial-card {
+            background: white;
+            border-radius: 32px;
+            padding: 28px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+            border: 1px solid #edf2f7;
+        }
+        .stars {
+            color: #f5b042;
+            margin-bottom: 16px;
+        }
+        /* Pricing */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        .pricing-card {
+            background: white;
+            border-radius: 32px;
+            padding: 32px 24px;
+            text-align: center;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+            transition: 0.2s;
+            border: 1px solid #eef2f6;
+        }
+        .pricing-card.popular {
+            border: 2px solid #f5b042;
+            position: relative;
+        }
+        .popular-badge {
+            background: #f5b042;
+            color: #0f2b4d;
+            padding: 5px 15px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .price {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin: 20px 0;
+            color: #1e6fdf;
+        }
+        .price small {
+            font-size: 0.9rem;
+            font-weight: 400;
+        }
+        /* Final CTA */
+        .final-cta {
+            background: #0f2b4d;
+            color: white;
+            text-align: center;
+            padding: 70px 20px;
+            border-radius: 48px;
+            margin: 40px 0;
         }
         /* Floating WhatsApp */
         .float-wa {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
+            bottom: 24px;
+            right: 24px;
             background: #25D366;
             color: white;
-            width: 55px;
-            height: 55px;
+            width: 56px;
+            height: 56px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.8rem;
+            font-size: 1.9rem;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
             z-index: 99;
             transition: 0.2s;
@@ -295,7 +371,7 @@
             transform: scale(1.1);
             background: #128C7E;
         }
-        /* ========== FOOTER ========== */
+        /* Footer */
         .footer {
             background: #0a1c2f;
             color: #bdd4f0;
@@ -351,7 +427,6 @@
         }
         .design-by {
             margin-top: 10px;
-            font-size: 0.8rem;
         }
         .design-by a {
             color: #f5b042;
@@ -359,12 +434,22 @@
             font-weight: 600;
         }
         @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .hamburger { display: block; }
-            .hero h1 { font-size: 2.2rem; }
-            .stats-section { gap: 30px; }
+            .nav-links {
+                display: none;
+            }
+            .hamburger {
+                display: block;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+            .problem-box, .solution-box {
+                padding: 32px 24px;
+            }
         }
-        /* mobile menu */
         .nav-links.show {
             display: flex;
             flex-direction: column;
@@ -373,8 +458,8 @@
             left: 0;
             width: 100%;
             background: white;
-            padding: 20px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            padding: 24px;
+            box-shadow: 0 20px 30px rgba(0,0,0,0.1);
             gap: 20px;
             z-index: 1000;
         }
@@ -384,150 +469,202 @@
 
 <nav class="navbar">
     <div class="nav-container">
-        <div class="logo">🎨 EPALOS ART</div>
+        <div class="logo">EPALOS</div>
         <div class="hamburger" onclick="toggleMenu()">☰</div>
         <div class="nav-links" id="navLinks">
             <a href="index.html" class="active">Home</a>
-            <a href="product.html">Product</a>
-            <a href="about.html">About</a>
-            <div class="icon-group">
-                <i class="fas fa-search"></i>
-                <i class="fas fa-shopping-cart"></i>
-                <a href="https://wa.me/07448787721" class="btn-wa-small"><i class="fab fa-whatsapp"></i> Order</a>
-            </div>
+            <a href="#">Services</a>
+            <a href="#">Portfolio</a>
+            <a href="#">Contact</a>
+            <a href="https://wa.me/07448787721" class="btn-wa-small"><i class="fab fa-whatsapp"></i> WhatsApp</a>
         </div>
     </div>
 </nav>
 
+<!-- HERO SECTION -->
 <section class="hero">
     <div class="container">
-        <h1>Inspiring Creativity,<br> One Brushstroke at a Time</h1>
-        <p>Less screen time. More imagination.<br>Give your child a fun, creative experience they’ll actually love.</p>
+        <h1>High‑Converting Websites That <span class="highlight">Actually Bring You Clients</span></h1>
+        <p>We design and build websites for small businesses that don’t just look good – they generate leads, calls, and sales.</p>
         <div class="hero-buttons">
-            <a href="product.html" class="btn-primary"><i class="fas fa-shopping-cart"></i> Shop Now</a>
-            <a href="https://wa.me/07448787721" class="btn-outline"><i class="fab fa-whatsapp"></i> Order on WhatsApp</a>
+            <a href="#pricing" class="btn-primary"><i class="fas fa-rocket"></i> Start Your Project</a>
+            <a href="https://wa.me/07448787721" class="btn-outline"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
         </div>
     </div>
 </section>
 
-<!-- Trust Bar -->
-<div style="background:white; padding: 20px 0; box-shadow:0 2px 8px rgba(0,0,0,0.02);">
-    <div class="container trust-items" style="display:flex; justify-content:center; gap:36px; flex-wrap:wrap;">
-        <span><i class="fas fa-box-open" style="color:#1e6fdf;"></i> All-in-One Kit</span>
-        <span><i class="fas fa-brain"></i> Boosts Creativity</span>
-        <span><i class="fas fa-hourglass-half"></i> Hours of Engagement</span>
-        <span><i class="fas fa-gift"></i> Perfect Gift</span>
+<!-- TRUST BAR -->
+<div class="trust-bar">
+    <div class="container trust-items">
+        <span><i class="fas fa-check-circle"></i> 50+ Projects Delivered</span>
+        <span><i class="fas fa-clock"></i> 2‑Week Turnaround</span>
+        <span><i class="fas fa-chart-line"></i> 95% Client Retention</span>
+        <span><i class="fas fa-shield-alt"></i> Reliable Support</span>
     </div>
 </div>
 
-<!-- Stats Counters -->
-<div class="container stats-section">
-    <div class="stat-item"><div class="stat-number" data-count="1500">0</div><p>Happy Kids</p></div>
-    <div class="stat-item"><div class="stat-number" data-count="3200">0</div><p>Artworks Created</p></div>
-    <div class="stat-item"><div class="stat-number" data-count="98">0</div><p>Satisfied Parents (%)</p></div>
+<!-- PROBLEM SECTION -->
+<div class="section">
+    <div class="container problem-box">
+        <h3>🤯 Most small business websites don’t bring in clients.</h3>
+        <p style="font-size: 1.1rem; margin-bottom: 16px;">They look generic, load slowly, or have no clear call‑to‑action. Visitors leave within seconds – and you lose money.</p>
+        <p>You need a website that works like a 24/7 salesperson. That’s where we come in.</p>
+    </div>
 </div>
 
+<!-- SOLUTION SECTION -->
+<div class="container solution-box">
+    <h3>✅ We build conversion‑focused websites – fast, beautiful, and results‑driven.</h3>
+    <p>No fluff. No endless revisions. Just a website that turns visitors into paying customers.</p>
+</div>
+
+<!-- SERVICES / WHAT WE DO -->
 <div class="section">
     <div class="container">
-        <div style="background:#eef5ff; border-radius:48px; padding:40px; text-align:center;">
-            <p style="font-size:1.4rem;">Everything your child needs to start painting—right out of the box.<br>No stress. No extra shopping. Just pure creativity.</p>
+        <h2 class="section-title">What We Build</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+                <h3>Business Websites</h3>
+                <p>Professional 5‑page sites for service providers, shops, and startups.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-store"></i></div>
+                <h3>E‑commerce Stores</h3>
+                <p>Sell products online with easy‑to‑manage stores (Shopify / WooCommerce).</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-chart-simple"></i></div>
+                <h3>SEO & Speed Optimization</h3>
+                <p>Get found on Google and keep visitors happy with lightning‑fast load times.</p>
+            </div>
         </div>
     </div>
 </div>
 
-<!-- How It Works -->
+<!-- PORTFOLIO / PROOF -->
+<div class="section" style="background: #f8fafc;">
+    <div class="container">
+        <h2 class="section-title">Real Work. Real Results.</h2>
+        <p class="section-sub">Here are recent projects that helped our clients grow.</p>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=600&auto=format" alt="Project 1">
+                <div class="portfolio-info"><h3>Lagos Bakery</h3><p>+45% more online orders in 2 months</p></div>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&auto=format" alt="Project 2">
+                <div class="portfolio-info"><h3>Real Estate Agency</h3><p>Inquiries increased by 80%</p></div>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format" alt="Project 3">
+                <div class="portfolio-info"><h3>Fashion Store</h3><p>200% ROI from first month</p></div>
+            </div>
+        </div>
+        <div style="text-align: center;"><a href="#" class="btn-outline" style="border-color:#1e6fdf; color:#1e6fdf;">View Full Portfolio →</a></div>
+    </div>
+</div>
+
+<!-- TESTIMONIALS -->
 <div class="section">
     <div class="container">
-        <h2 class="section-title"><i class="fas fa-magic"></i> How It Works</h2>
-        <div class="steps-grid">
-            <div class="step"><div class="step-icon"><i class="fas fa-box-open"></i></div><h3>Open the pack</h3></div>
-            <div class="step"><div class="step-icon"><i class="fas fa-palette"></i></div><h3>Set up the easel</h3></div>
-            <div class="step"><div class="step-icon"><i class="fas fa-paintbrush"></i></div><h3>Start painting</h3></div>
-            <div class="step"><div class="step-icon"><i class="fas fa-smile"></i></div><h3>Enjoy masterpiece 🎨</h3></div>
+        <h2 class="section-title">Trusted by Business Owners</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"EPALOS delivered a stunning website for my cleaning business. My phone hasn’t stopped ringing!"</p>
+                <p style="margin-top: 16px;"><strong>— Tunde A.</strong></p>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"They understood my brand and built a site that actually converts. Best investment I’ve made."</p>
+                <p style="margin-top: 16px;"><strong>— Chioma O.</strong></p>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"Fast, professional, and affordable. My website loads in under 2 seconds – my customers love it."</p>
+                <p style="margin-top: 16px;"><strong>— Ibrahim K.</strong></p>
+            </div>
         </div>
-        <p style="text-align:center; margin-top:24px;">Simple. Fun. Mess-controlled.</p>
     </div>
 </div>
 
-<!-- Transformation -->
-<div style="background:#eef5ff; border-radius:48px; margin:40px auto; padding:60px 20px; text-align:center; max-width:1280px;">
-    <h2 class="section-title">From “I’m bored” to proud creator</h2>
-    <div style="display:flex; justify-content:center; gap:40px; flex-wrap:wrap;">
-        <div style="background:white; padding:30px 40px; border-radius:40px;"><i class="fas fa-frown fa-2x"></i><br>Before: “I’m bored 😩”</div>
-        <div style="background:white; padding:30px 40px; border-radius:40px;"><i class="fas fa-laugh-beam fa-2x"></i><br>After: Focused, excited, creating 😍</div>
-    </div>
-</div>
-
-<!-- Gallery -->
-<div class="section">
+<!-- PRICING / OFFER (Clear packages) -->
+<div id="pricing" class="section">
     <div class="container">
-        <h2 class="section-title"><i class="fas fa-images"></i> Creative Moments Gallery</h2>
-        <div class="gallery-grid">
-            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=500&auto=format" alt="Kid painting"></div>
-            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1605106702734-205df224ecce?w=500&auto=format" alt="Art kit"></div>
-            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=500&auto=format" alt="Finished artwork"></div>
-            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=500&auto=format" alt="Happy child"></div>
+        <h2 class="section-title">Simple, Transparent Pricing</h2>
+        <p class="section-sub">No hidden fees. You pay exactly what you see.</p>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3>Starter</h3>
+                <div class="price">₦150,000</div>
+                <p>3‑page website · Mobile responsive · Contact form · Basic SEO</p>
+                <a href="https://wa.me/07448787721" class="btn-outline" style="margin-top: 24px; border-color:#1e6fdf; color:#1e6fdf;">Get Started</a>
+            </div>
+            <div class="pricing-card popular">
+                <div class="popular-badge">⭐ Most Popular</div>
+                <h3>Business</h3>
+                <div class="price">₦300,000</div>
+                <p>5‑page website · E‑commerce ready · Speed optimization · SEO setup · 1 month support</p>
+                <a href="https://wa.me/07448787721" class="btn-primary" style="margin-top: 24px;">Start Project</a>
+            </div>
+            <div class="pricing-card">
+                <h3>Premium</h3>
+                <div class="price">₦500,000+</div>
+                <p>Custom design · Advanced functionality · Ongoing maintenance · Priority support</p>
+                <a href="https://wa.me/07448787721" class="btn-outline" style="margin-top: 24px; border-color:#1e6fdf; color:#1e6fdf;">Let's Talk</a>
+            </div>
         </div>
     </div>
 </div>
 
-<!-- Why Choose Us -->
-<div class="section" style="background:#eef5ff; border-radius:48px; margin:20px;">
-    <div class="container">
-        <h2 class="section-title">Why EPALOS</h2>
-        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:30px;">
-            <div class="feature-card" style="background:white; padding:24px; border-radius:28px; text-align:center;"><i class="fas fa-shield-alt fa-3x" style="color:#1e6fdf;"></i><h3>Safe Materials</h3><p>Non-toxic</p></div>
-            <div class="feature-card" style="background:white; padding:24px; border-radius:28px; text-align:center;"><i class="fas fa-clock fa-3x" style="color:#1e6fdf;"></i><h3>Screen‑Time Killer</h3><p>Hours of fun</p></div>
-            <div class="feature-card" style="background:white; padding:24px; border-radius:28px; text-align:center;"><i class="fas fa-gem fa-3x" style="color:#1e6fdf;"></i><h3>Complete Kit</h3><p>No extra shopping</p></div>
-        </div>
+<!-- FINAL CTA -->
+<div class="container final-cta">
+    <h2 style="font-size: 2rem;">Ready to Grow Your Business Online?</h2>
+    <p style="margin: 20px auto; max-width: 500px;">Get a website that works as hard as you do. No games – just results.</p>
+    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <a href="https://wa.me/07448787721" class="btn-primary" style="background: white; color: #0f2b4d;"><i class="fab fa-whatsapp"></i> Book a Free Call</a>
+        <a href="#pricing" class="btn-outline" style="border-color: white; color: white;">View Packages</a>
     </div>
 </div>
 
-<!-- Final CTA -->
-<div class="section" style="text-align:center;">
-    <h2 style="font-size:2rem;">Ready to spark your child’s creativity?</h2>
-    <div style="margin-top:28px;">
-        <a href="product.html" class="btn-primary">🛒 Shop Now</a>
-        <a href="https://wa.me/07448787721" class="btn-outline" style="margin-left:16px; border-color:#1e6fdf; color:#1e6fdf;">📲 Order via WhatsApp</a>
-    </div>
-</div>
-
-<!-- Floating WhatsApp -->
+<!-- FLOATING WHATSAPP BUTTON -->
 <a href="https://wa.me/07448787721" class="float-wa" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
-<!-- FOOTER (Complete) -->
+<!-- FOOTER -->
 <footer class="footer">
     <div class="container">
         <div class="footer-grid">
             <div class="footer-col">
-                <h4>EPALOS ART</h4>
-                <p>Inspiring young artists since 2025.</p>
+                <h4>EPALOS Global Ventures</h4>
+                <p>We build high‑converting websites for ambitious small businesses.</p>
                 <div class="social-icons">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
             <div class="footer-col">
                 <h4>Quick Links</h4>
-                <a href="index.html">Home</a>
-                <a href="product.html">Product</a>
-                <a href="about.html">About</a>
+                <a href="#">Home</a>
+                <a href="#">Services</a>
+                <a href="#">Portfolio</a>
+                <a href="#">Contact</a>
             </div>
             <div class="footer-col">
                 <h4>Support</h4>
                 <a href="#">FAQ</a>
-                <a href="#">Shipping Info</a>
-                <a href="#">Returns</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
             </div>
             <div class="footer-col">
-                <h4>Contact</h4>
+                <h4>Connect</h4>
                 <a href="https://wa.me/07448787721">WhatsApp: +234 744 878 7721</a>
-                <a href="mailto:hello@epalosart.com">Email: hello@epalosart.com</a>
+                <a href="mailto:hello@epalos.com">Email: hello@epalos.com</a>
             </div>
         </div>
         <div class="copyright">
-            <p>&copy; 2025 Epalos Global Ventures Limited. All rights reserved.</p>
+            <p>&copy; 2025 EPALOS Global Ventures Limited. All rights reserved.</p>
             <div class="design-by">Designed by <a href="https://kreationdigitals.com" target="_blank">Kreation Digitals</a></div>
         </div>
     </div>
@@ -537,23 +674,6 @@
     function toggleMenu() {
         document.getElementById("navLinks").classList.toggle("show");
     }
-    // Counter animation
-    const counters = document.querySelectorAll('.stat-number');
-    counters.forEach(counter => {
-        const updateCount = () => {
-            const target = +counter.getAttribute('data-count');
-            let count = +counter.innerText;
-            const increment = target / 50;
-            if (count < target) {
-                count = Math.ceil(count + increment);
-                counter.innerText = count;
-                setTimeout(updateCount, 30);
-            } else {
-                counter.innerText = target;
-            }
-        };
-        updateCount();
-    });
 </script>
 </body>
 </html>
