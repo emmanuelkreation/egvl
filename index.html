@@ -41,7 +41,12 @@
             margin: 0 auto;
             padding: 0 24px;
         }
+        /* Logo styling - icon + text */
         .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
             font-size: 1.7rem;
             font-weight: 800;
             background: linear-gradient(135deg, #1e6fdf, #0f2b4d);
@@ -49,6 +54,13 @@
             background-clip: text;
             color: transparent;
             letter-spacing: -0.5px;
+        }
+        .logo i {
+            background: none;
+            -webkit-background-clip: unset;
+            background-clip: unset;
+            color: #1e6fdf;
+            font-size: 1.9rem;
         }
         .nav-links {
             display: flex;
@@ -101,7 +113,7 @@
             cursor: pointer;
             color: #1e2a3e;
         }
-        /* ========== HERO SECTION ========== */
+        /* ========== HERO SECTION with Logo ========== */
         .hero {
             background: linear-gradient(135deg, #0f2b4d 0%, #1e6fdf 100%);
             color: white;
@@ -109,6 +121,17 @@
             text-align: center;
             position: relative;
             overflow: hidden;
+        }
+        .hero-logo {
+            margin-bottom: 30px;
+        }
+        .hero-logo i {
+            font-size: 4.5rem;
+            background: rgba(255,255,255,0.2);
+            padding: 20px;
+            border-radius: 60px;
+            backdrop-filter: blur(4px);
+            color: #f5b042;
         }
         .hero h1 {
             font-size: 3.2rem;
@@ -173,7 +196,7 @@
             color: #1e6fdf;
             border-color: white;
         }
-        /* Trust bar */
+        /* Trust bar, sections, etc. (same as previous) */
         .trust-bar {
             background: #f8fafc;
             padding: 18px 0;
@@ -191,7 +214,6 @@
             color: #1e6fdf;
             margin-right: 8px;
         }
-        /* Section styles */
         .section {
             padding: 80px 0;
         }
@@ -209,7 +231,6 @@
             color: #4a627a;
             font-size: 1.1rem;
         }
-        /* Problem / Solution */
         .problem-box, .solution-box {
             background: #f1f5f9;
             border-radius: 32px;
@@ -221,7 +242,6 @@
             margin-bottom: 20px;
             color: #0f2b4d;
         }
-        /* Services grid */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -254,7 +274,6 @@
             font-size: 1.8rem;
             color: #1e6fdf;
         }
-        /* Portfolio gallery */
         .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -280,7 +299,6 @@
         .portfolio-info {
             padding: 20px;
         }
-        /* Testimonials */
         .testimonial-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -298,7 +316,6 @@
             color: #f5b042;
             margin-bottom: 16px;
         }
-        /* Pricing */
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -336,11 +353,6 @@
             margin: 20px 0;
             color: #1e6fdf;
         }
-        .price small {
-            font-size: 0.9rem;
-            font-weight: 400;
-        }
-        /* Final CTA */
         .final-cta {
             background: #0f2b4d;
             color: white;
@@ -349,7 +361,6 @@
             border-radius: 48px;
             margin: 40px 0;
         }
-        /* Floating WhatsApp */
         .float-wa {
             position: fixed;
             bottom: 24px;
@@ -371,7 +382,6 @@
             transform: scale(1.1);
             background: #128C7E;
         }
-        /* Footer */
         .footer {
             background: #0a1c2f;
             color: #bdd4f0;
@@ -469,7 +479,9 @@
 
 <nav class="navbar">
     <div class="nav-container">
-        <div class="logo">EPALOS</div>
+        <a href="index.html" class="logo">
+            <i class="fas fa-palette"></i> EPALOS
+        </a>
         <div class="hamburger" onclick="toggleMenu()">☰</div>
         <div class="nav-links" id="navLinks">
             <a href="index.html" class="active">Home</a>
@@ -481,9 +493,12 @@
     </div>
 </nav>
 
-<!-- HERO SECTION -->
+<!-- HERO SECTION with Logo -->
 <section class="hero">
     <div class="container">
+        <div class="hero-logo">
+            <i class="fas fa-palette"></i>
+        </div>
         <h1>High‑Converting Websites That <span class="highlight">Actually Bring You Clients</span></h1>
         <p>We design and build websites for small businesses that don’t just look good – they generate leads, calls, and sales.</p>
         <div class="hero-buttons">
@@ -493,7 +508,7 @@
     </div>
 </section>
 
-<!-- TRUST BAR -->
+<!-- TRUST BAR (unchanged) -->
 <div class="trust-bar">
     <div class="container trust-items">
         <span><i class="fas fa-check-circle"></i> 50+ Projects Delivered</span>
@@ -503,7 +518,7 @@
     </div>
 </div>
 
-<!-- PROBLEM SECTION -->
+<!-- PROBLEM / SOLUTION (unchanged) -->
 <div class="section">
     <div class="container problem-box">
         <h3>🤯 Most small business websites don’t bring in clients.</h3>
@@ -512,13 +527,12 @@
     </div>
 </div>
 
-<!-- SOLUTION SECTION -->
 <div class="container solution-box">
     <h3>✅ We build conversion‑focused websites – fast, beautiful, and results‑driven.</h3>
     <p>No fluff. No endless revisions. Just a website that turns visitors into paying customers.</p>
 </div>
 
-<!-- SERVICES / WHAT WE DO -->
+<!-- SERVICES -->
 <div class="section">
     <div class="container">
         <h2 class="section-title">What We Build</h2>
@@ -542,7 +556,7 @@
     </div>
 </div>
 
-<!-- PORTFOLIO / PROOF -->
+<!-- PORTFOLIO -->
 <div class="section" style="background: #f8fafc;">
     <div class="container">
         <h2 class="section-title">Real Work. Real Results.</h2>
@@ -589,7 +603,7 @@
     </div>
 </div>
 
-<!-- PRICING / OFFER (Clear packages) -->
+<!-- PRICING (id="pricing") -->
 <div id="pricing" class="section">
     <div class="container">
         <h2 class="section-title">Simple, Transparent Pricing</h2>
@@ -628,10 +642,10 @@
     </div>
 </div>
 
-<!-- FLOATING WHATSAPP BUTTON -->
+<!-- FLOATING WHATSAPP -->
 <a href="https://wa.me/07448787721" class="float-wa" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
-<!-- FOOTER -->
+<!-- FOOTER (unchanged) -->
 <footer class="footer">
     <div class="container">
         <div class="footer-grid">
