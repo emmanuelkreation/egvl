@@ -357,7 +357,7 @@
         .why-card:hover {
             transform: translateY(-8px);
         }
-        /* Case studies */
+        /* Case studies - FIXED IMAGE HEIGHT */
         .case-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -372,8 +372,10 @@
         }
         .case-card img {
             width: 100%;
-            height: 200px;
+            height: 340px; /* Increased height */
             object-fit: cover;
+            object-position: center; /* Ensures full image visibility */
+            display: block;
         }
         .case-content {
             padding: 24px;
@@ -554,6 +556,7 @@
             .hero-content p { margin-left: auto; margin-right: auto; }
             .hero-logo img { width: 160px; }
             .section-title { font-size: 2rem; }
+            .case-card img { height: 260px; } /* Slightly smaller on mobile */
         }
         .nav-links.show {
             display: flex;
@@ -692,7 +695,7 @@
     </div>
 </div>
 
-<!-- Case Studies (Real Stories) -->
+<!-- Case Studies (Real Stories) - FIXED IMAGE HEIGHT -->
 <div class="section" style="background:#f9fafb;">
     <div class="container">
         <h2 class="section-title">📖 Real Stories, Real Joy</h2>
