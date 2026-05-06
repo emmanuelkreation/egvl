@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>About Us | Epalos Creatives – Inspiring Young Artists</title>
+    <title>About | Epalos Creatives – Meet Solape Olukoya</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -24,7 +24,7 @@
             margin: 0 auto;
             padding: 0 24px;
         }
-        /* Header (same as homepage) */
+        /* Header */
         .navbar {
             background: rgba(255,255,255,0.96);
             backdrop-filter: blur(16px);
@@ -97,14 +97,14 @@
             cursor: pointer;
             color: #0f2b4d;
         }
-        /* Hero */
+        /* Hero - improved background & text */
         .hero {
             position: relative;
-            min-height: 70vh;
+            min-height: 65vh;
             display: flex;
             align-items: center;
             margin-top: 74px;
-            background: linear-gradient(105deg, rgba(15,43,77,0.85), rgba(30,111,223,0.7)), url('https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=2070&auto=format');
+            background: linear-gradient(105deg, rgba(15,43,77,0.9), rgba(30,111,223,0.8)), url('https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=2070&auto=format');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -114,15 +114,18 @@
         .hero-content {
             max-width: 800px;
             margin: 0 auto;
+            padding: 40px 20px;
         }
         .hero-content h1 {
             font-size: 3.5rem;
             font-weight: 800;
             margin-bottom: 20px;
+            letter-spacing: -0.02em;
         }
         .hero-content p {
             font-size: 1.2rem;
             opacity: 0.95;
+            line-height: 1.5;
         }
         /* Sections */
         .section {
@@ -165,7 +168,7 @@
             border-radius: 32px;
             box-shadow: 0 20px 30px rgba(0,0,0,0.1);
         }
-        /* Promise grid */
+        /* Promise cards - no background issue */
         .promise-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -193,7 +196,7 @@
         /* Team section */
         .team-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 40px;
             margin: 50px 0;
         }
@@ -206,31 +209,143 @@
         }
         .team-card img {
             width: 100%;
-            height: 280px;
+            height: 320px;
             object-fit: cover;
         }
         .team-info {
             padding: 24px;
         }
-        /* Contact section */
-        .contact-section {
-            background: #f8fafc;
+        /* Stats - redesigned background */
+        .stats-section {
+            background: linear-gradient(120deg, #0f2b4d, #1e6fdf);
+            color: white;
+            padding: 60px 0;
+            margin: 40px 0;
             border-radius: 60px;
-            padding: 60px 40px;
             text-align: center;
+        }
+        .stats-grid {
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            flex-wrap: wrap;
+        }
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            display: block;
+        }
+        /* Map */
+        .map-container {
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: 0 20px 30px rgba(0,0,0,0.1);
             margin: 40px 0;
         }
-        .contact-buttons {
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: 0;
+        }
+        /* FAQ */
+        .faq-grid {
+            max-width: 800px;
+            margin: 60px auto;
+        }
+        .faq-item {
+            background: #f8fafc;
+            margin-bottom: 20px;
+            border-radius: 28px;
+            padding: 24px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .faq-item:hover {
+            background: #eef5ff;
+        }
+        .faq-question {
+            font-weight: 700;
+            display: flex;
+            justify-content: space-between;
+        }
+        .faq-answer {
+            display: none;
+            margin-top: 16px;
+            color: #4b5563;
+        }
+        /* Contact form */
+        .form-container {
+            background: #f8fafc;
+            border-radius: 48px;
+            padding: 50px;
+            margin: 60px 0;
+        }
+        .form-group {
+            margin-bottom: 24px;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 16px 20px;
+            border: 1px solid #e2e8f0;
+            border-radius: 60px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: 0.2s;
+        }
+        .form-group textarea {
+            border-radius: 28px;
+            resize: vertical;
+        }
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: #1e6fdf;
+            box-shadow: 0 0 0 3px rgba(30,111,223,0.1);
+        }
+        .btn-submit {
+            background: #f5b042;
+            color: #0f2b4d;
+            padding: 14px 32px;
+            border-radius: 60px;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .btn-submit:hover {
+            background: #ffaa2b;
+            transform: translateY(-3px);
+        }
+        /* Final CTA - completely redesigned */
+        .final-cta {
+            background: linear-gradient(135deg, #0f2b4d, #1e6fdf);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            border-radius: 60px;
+            margin: 60px 0;
+            box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+        }
+        .final-cta h2 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+        .final-cta p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            opacity: 0.95;
+        }
+        .cta-buttons {
             display: flex;
             gap: 24px;
             justify-content: center;
             flex-wrap: wrap;
-            margin-top: 30px;
         }
-        .btn-primary {
-            background: #f5b042;
+        .btn-primary-white {
+            background: white;
             color: #0f2b4d;
-            padding: 14px 32px;
+            padding: 16px 36px;
             border-radius: 60px;
             font-weight: 700;
             text-decoration: none;
@@ -239,15 +354,16 @@
             gap: 12px;
             transition: 0.2s;
         }
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            background: #ffaa2b;
+        .btn-primary-white:hover {
+            transform: translateY(-4px);
+            background: #f5b042;
+            color: #0f2b4d;
         }
-        .btn-outline {
+        .btn-outline-light {
             background: transparent;
-            border: 2px solid #1e6fdf;
-            color: #1e6fdf;
-            padding: 12px 28px;
+            border: 2px solid white;
+            color: white;
+            padding: 14px 32px;
             border-radius: 60px;
             font-weight: 600;
             text-decoration: none;
@@ -256,9 +372,10 @@
             gap: 10px;
             transition: 0.2s;
         }
-        .btn-outline:hover {
-            background: #1e6fdf;
-            color: white;
+        .btn-outline-light:hover {
+            background: white;
+            color: #1e6fdf;
+            transform: scale(1.02);
         }
         /* Footer */
         .footer {
@@ -320,13 +437,18 @@
             font-size: 2rem;
             color: white;
             z-index: 99;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
+        /* Responsive */
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .hamburger { display: block; }
             .story-grid { grid-template-columns: 1fr; text-align: center; }
             .hero-content h1 { font-size: 2.2rem; }
             .section-title { font-size: 1.8rem; }
+            .stats-grid { gap: 30px; }
+            .form-container { padding: 30px; }
+            .final-cta h2 { font-size: 1.8rem; }
         }
         .nav-links.show {
             display: flex;
@@ -368,7 +490,7 @@
     </div>
 </nav>
 
-<!-- Hero -->
+<!-- Hero - improved -->
 <section class="hero">
     <div class="container hero-content">
         <h1>🌍 About Epalos Creatives</h1>
@@ -376,105 +498,134 @@
     </div>
 </section>
 
-<!-- Our Story + Mission/Vision -->
+<!-- Our Story with real founder name -->
 <div class="section">
     <div class="container">
         <div class="story-grid reveal">
             <div class="story-text">
                 <h2 class="section-title" style="text-align:left;">Our Story</h2>
-                <p>In a world where children are constantly drawn to screens, we wanted to create something different… something meaningful.</p>
-                <p>The Young Artist’s Pack was designed to give children more than just art supplies — it gives them a chance to express themselves, build confidence, and discover the joy of creating something from nothing.</p>
+                <p>In a world where children are constantly drawn to screens, <strong>Solape Olukoya</strong> wanted to create something different – something meaningful.</p>
+                <p>As a mother and former teacher, Solape saw first‑hand how art transformed shy, restless children into confident creators. So she founded <strong>Epalos Creatives</strong> to bring complete, no‑stress art kits to families across the UK.</p>
                 <p><strong>We believe:</strong> Every child is creative. Every child deserves to feel proud. And sometimes, all it takes… is the right tools.</p>
                 <p>This isn’t just a product — it’s the start of a young artist’s journey.</p>
             </div>
             <div class="story-image">
-                <img src="https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=800&auto=format" alt="Kids painting">
+                <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=800&auto=format" alt="Child painting with joy">
             </div>
         </div>
     </div>
 </div>
 
-<!-- Vision Section -->
-<div class="section" style="background:#f8fafc;">
+<!-- Meet the Founder -->
+<div class="section" style="background:#f9fafb;">
     <div class="container">
-        <h2 class="section-title">🎨 Our Vision</h2>
-        <p class="section-sub">To help children spend less time on screens and more time creating, exploring, and expressing themselves — building a generation of confident young artists.</p>
-    </div>
-</div>
-
-<!-- Why We Created This -->
-<div class="section">
-    <div class="container">
-        <div class="story-grid reverse" style="direction: rtl;">
-            <div class="story-text" style="direction: ltr;">
-                <h2 class="section-title" style="text-align:left;">💛 Why We Created This</h2>
-                <p>We saw how often kids say: <strong>“I’m bored.”</strong></p>
-                <p>So we created a simple solution — a complete art experience in one box. No complicated setups, no missing pieces. Just the pure joy of creating.</p>
-                <p>Every kit is thoughtfully designed to spark curiosity, develop fine motor skills, and give parents a break from screen-time battles.</p>
-            </div>
-            <div class="story-image" style="direction: ltr;">
-                <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=800&auto=format" alt="Child proud of artwork">
+        <h2 class="section-title">🧑‍🎨 Meet the Founder</h2>
+        <div class="team-grid">
+            <div class="team-card reveal">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&auto=format" alt="Solape Olukoya, Founder">
+                <div class="team-info">
+                    <h3>Solape Olukoya</h3>
+                    <p>Founder & Creative Director</p>
+                    <p>“I started Epalos Creatives to help children discover the joy of making art – away from screens. Seeing a child’s face light up when they finish their first painting is why I do this.”</p>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
 <!-- Our Promise -->
-<div class="section" style="background:#f8fafc;">
+<div class="section">
     <div class="container">
         <h2 class="section-title">🤝 Our Promise</h2>
         <div class="promise-grid">
             <div class="promise-card reveal">
                 <div class="promise-icon"><i class="fas fa-gem"></i></div>
                 <h3>Quality Products</h3>
-                <p>Durable easel, real canvas, premium paints — built to last through many masterpieces.</p>
+                <p>Durable easel, real canvas, premium paints – built to last.</p>
             </div>
             <div class="promise-card reveal">
                 <div class="promise-icon"><i class="fas fa-palette"></i></div>
                 <h3>Thoughtfully Designed</h3>
-                <p>Every piece chosen to inspire creativity and make the process effortless.</p>
+                <p>Every piece chosen to inspire creativity and ease.</p>
             </div>
             <div class="promise-card reveal">
                 <div class="promise-icon"><i class="fas fa-shield-alt"></i></div>
                 <h3>Safe Materials</h3>
-                <p>Non-toxic, child-friendly paints and components — safety first.</p>
+                <p>Non‑toxic, child‑friendly paints and components.</p>
             </div>
             <div class="promise-card reveal">
                 <div class="promise-icon"><i class="fas fa-smile"></i></div>
                 <h3>Meaningful Experience</h3>
-                <p>From first brushstroke to proud display — a journey of growth and joy.</p>
+                <p>From first brushstroke to proud display – pure joy.</p>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Meet the Founder (Team) -->
+<!-- Stats with counter -->
+<div class="container stats-section reveal">
+    <div class="stats-grid">
+        <div><span class="stat-number" data-target="5000">0</span>+<br>Happy Kids</div>
+        <div><span class="stat-number" data-target="12000">0</span>+<br>Artworks Created</div>
+        <div><span class="stat-number" data-target="98">0</span>%<br>Parent Satisfaction</div>
+    </div>
+</div>
+
+<!-- Live Map -->
 <div class="section">
     <div class="container">
-        <h2 class="section-title">🧑‍🎨 Meet the Founder</h2>
-        <div class="team-grid">
-            <div class="team-card reveal">
-                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Sarah Epalos">
-                <div class="team-info">
-                    <h3>Sarah Epalos</h3>
-                    <p>Founder & Creative Director</p>
-                    <p>“I started Epalos Creatives to help children discover the joy of making art – away from screens. Seeing a child’s face light up when they finish their first painting is why I do this.”</p>
-                </div>
-            </div>
-            <!-- Add more team members if needed -->
+        <h2 class="section-title">📍 Based in the UK, Serving Families Everywhere</h2>
+        <div class="map-container reveal">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1=2483.8900481092477!2d-0.127647923548583!3d51.50721777180131!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604cb6b4c9f5b%3A0x6c8d4c7e8f5b3e2d!2sLondon%2C%20UK!5e0!3m2!1sen!2sng!4v1715000000000!5m2!1sen!2sng" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <p class="section-sub">We ship across England, Scotland, Wales, and Northern Ireland. Visit our workspace in London by appointment.</p>
+    </div>
+</div>
+
+<!-- FAQ Section -->
+<div class="section" style="background:#f9fafb;">
+    <div class="container">
+        <h2 class="section-title">❓ Frequently Asked Questions</h2>
+        <div class="faq-grid">
+            <div class="faq-item" onclick="toggleFAQ(this)"><div class="faq-question">What age is this art kit for? <i class="fas fa-chevron-down"></i></div><div class="faq-answer">Ages 5–12, perfect for beginners and growing artists.</div></div>
+            <div class="faq-item" onclick="toggleFAQ(this)"><div class="faq-question">Is everything included? <i class="fas fa-chevron-down"></i></div><div class="faq-answer">Yes – easel, paints, brushes, canvas, apron, palette, water bowl, pencil, eraser, sharpener. No extra shopping needed.</div></div>
+            <div class="faq-item" onclick="toggleFAQ(this)"><div class="faq-question">Do you ship to the whole UK? <i class="fas fa-chevron-down"></i></div><div class="faq-answer">Yes, we ship nationwide within 3–5 working days. Free delivery on orders over £50.</div></div>
+            <div class="faq-item" onclick="toggleFAQ(this)"><div class="faq-question">Can I order for a school or birthday party? <i class="fas fa-chevron-down"></i></div><div class="faq-answer">Absolutely! Contact us for bulk discounts and custom event packs.</div></div>
+            <div class="faq-item" onclick="toggleFAQ(this)"><div class="faq-question">What if my child doesn’t like it? <i class="fas fa-chevron-down"></i></div><div class="faq-answer">We offer a 30‑day money‑back guarantee – no questions asked.</div></div>
         </div>
     </div>
 </div>
 
-<!-- Contact & Order Section -->
-<div class="container contact-section reveal">
-    <h2 class="section-title" style="background:none; color:#0f2b4d;">📲 Get in Touch</h2>
-    <p style="font-size:1.1rem;">Have questions? Ready to order? We’d love to hear from you.</p>
-    <div class="contact-buttons">
-        <a href="https://wa.me/07448787721" class="btn-primary"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
-        <a href="mailto:hello@epalos.com" class="btn-outline"><i class="fas fa-envelope"></i> Send Email</a>
+<!-- Contact Form -->
+<div class="section">
+    <div class="container form-container reveal">
+        <h2 class="section-title" style="margin-bottom: 30px;">📝 Send Us a Message</h2>
+        <form action="#" method="POST">
+            <div class="form-group">
+                <input type="text" name="name" placeholder="Your full name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" name="email" placeholder="Email address" required>
+            </div>
+            <div class="form-group">
+                <textarea name="message" rows="5" placeholder="How can we help you?"></textarea>
+            </div>
+            <div style="text-align: center;">
+                <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> Send Message</button>
+            </div>
+            <p style="text-align: center; margin-top: 20px; font-size: 0.85rem;">📲 Or WhatsApp us directly: <strong>+234 744 878 7721</strong></p>
+        </form>
     </div>
-    <p style="margin-top: 30px;">📞 Or reach us directly: <strong>+234 744 878 7721</strong> (WhatsApp only)</p>
+</div>
+
+<!-- Final CTA - completely redesigned -->
+<div class="container final-cta reveal">
+    <h2>Ready to spark your child’s creativity?</h2>
+    <p>Join thousands of happy families who have replaced screen time with art time.</p>
+    <div class="cta-buttons">
+        <a href="product.html" class="btn-primary-white"><i class="fas fa-shopping-cart"></i> Shop Now</a>
+        <a href="https://wa.me/07448787721" class="btn-outline-light"><i class="fab fa-whatsapp"></i> Order on WhatsApp</a>
+    </div>
 </div>
 
 <!-- Floating WhatsApp -->
@@ -507,8 +658,8 @@
             </div>
             <div class="footer-col">
                 <h4>Connect</h4>
-                <a href="https://wa.me/07448787721">WhatsApp</a>
-                <a href="mailto:hello@epalos.com">Email</a>
+                <a href="https://wa.me/07448787721">WhatsApp: +234 744 878 7721</a>
+                <a href="mailto:hello@epalos.com">Email: hello@epalos.com</a>
             </div>
         </div>
         <div class="copyright">
@@ -520,6 +671,18 @@
 
 <script>
     function toggleMenu() { document.getElementById("navLinks").classList.toggle("show"); }
+    function toggleFAQ(el) { 
+        let answer = el.querySelector('.faq-answer');
+        let icon = el.querySelector('.fa-chevron-down');
+        if (answer.style.display === 'none' || !answer.style.display) {
+            answer.style.display = 'block';
+            icon.style.transform = 'rotate(180deg)';
+        } else {
+            answer.style.display = 'none';
+            icon.style.transform = 'rotate(0deg)';
+        }
+    }
+    document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
     // Scroll reveal
     const reveals = document.querySelectorAll('.reveal');
     function revealScroll() {
@@ -530,6 +693,25 @@
     }
     window.addEventListener('scroll', revealScroll);
     revealScroll();
+    // Counters
+    const counters = document.querySelectorAll('.stat-number');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute('data-target');
+                    let count = 0;
+                    const update = () => {
+                        if (count < target) { count = Math.ceil(count + target/200); counter.innerText = count; setTimeout(update, 20); }
+                        else counter.innerText = target;
+                    };
+                    update();
+                });
+                observer.disconnect();
+            }
+        });
+    }, { threshold: 0.3 });
+    observer.observe(document.querySelector('.stats-section'));
 </script>
 </body>
 </html>
